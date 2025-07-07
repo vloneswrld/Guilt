@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Guilt - For Ameer ❤️</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+  body {
+    margin: 0;
+    height: 100vh;
+    background: #fce8e6; /* soft warm blush */
+    font-family: 'Comfortaa', cursive, sans-serif;
+    color: #7a3a3a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  .container {
+    max-width: 520px;
+    background: rgba(255 255 255 / 0.92);
+    padding: 30px 25px 25px 25px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(122,58,58,0.3);
+    position: relative;
+    z-index: 2;
+  }
+  h1 {
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 2.3rem;
+  }
+  .heart-emoji {
+    font-size: 64px;
+    line-height: 1;
+    margin: 0 auto 20px auto;
+    position: relative;
+    display: inline-block;
+  }
+  /* pulsating glow behind the emoji */
+  .heart-emoji::before {
+    content: "❤️";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    filter: blur(8px);
+    opacity: 0.6;
+    animation: pulseGlow 2.5s infinite ease-in-out;
+    z-index: -1;
+  }
+  @keyframes pulseGlow {
+    0%, 100% {
+      opacity: 0.6;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.15);
+    }
+  }
+  p {
+    font-size: 1.15rem;
+    line-height: 1.5;
+    margin-bottom: 25px;
+    color: #7a3a3a;
+  }
+  button {
+    background-color: #b35656;
+    border: none;
+    color: white;
+    padding: 13px 30px;
+    font-size: 1.1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    user-select: none;
+  }
+  button:hover {
+    background-color: #873d3d;
+  }
+  #forgivenessContainer {
+    margin-top: 20px;
+    font-size: 1.25rem;
+    color: #7a3a3a;
+    display: none;
+    user-select: none;
+  }
+  #forgivenessEmojis {
+    font-size: 2.8rem;
+    margin-top: 12px;
+  }
+</style>
+</head>
+<body>
+
+<div class="container" id="content">
+  <h1>Hi prettyy boy,</h1>
+  <div class="heart-emoji" aria-hidden="true">❤️</div>
+  <p id="message">
+    Hii prettyy boyy, I know sometimes guilt can weigh heavy on your heart, making you replay things over and over. But remember, you’re only human — you learn, you grow, and you deserve kindness from yourself just like from me. I’m here to remind you that mistakes don’t define you, and my love for you is endless and unconditional. Whenever guilt feels too much, click the button — I’m sending you forgiveness, warmth, and a big comforting hug 🤗❤️
+  </p>
+  <button id="forgivenessBtn">Send you forgiveness</button>
+
+  <div id="forgivenessContainer" aria-live="polite" role="alert">
+    <div id="forgivenessMessage">You are forgiven, loved, and held close 🤗❤️</div>
+  </div>
+</div>
+
+<script>
+  const forgivenessBtn = document.getElementById('forgivenessBtn');
+  const forgivenessContainer = document.getElementById('forgivenessContainer');
+
+  forgivenessBtn.addEventListener('click', () => {
+    forgivenessContainer.style.display = 'block';
+    forgivenessBtn.disabled = true;
+    forgivenessBtn.style.cursor = 'default';
+    forgivenessBtn.style.backgroundColor = '#d66a6a';
+  });
+</script>
+
+</body>
+</html>
